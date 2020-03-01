@@ -5,6 +5,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Page {
+	
 	protected Map<String, Page> pages = new HashMap<>();
 	
 	public Scene setupMainScene(Stage stage) 
