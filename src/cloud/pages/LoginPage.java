@@ -11,11 +11,11 @@ import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 public class LoginPage extends Page {
-	@Override
-	public Scene setupMainScene(Stage stage)
-	{
-		/* Setup & Create Scene */
-		Text logInTitle = new Text(50, 50, "Cloud");
+	
+    @Override public Scene setupMainScene(Stage stage)
+    {
+	/* Setup & Create Scene */
+	Text logInTitle = new Text(50, 50, "Cloud");
         logInTitle.setLayoutX(75);
         logInTitle.setLayoutY(50);
         logInTitle.setFill(Color.WHITE);
@@ -48,18 +48,18 @@ public class LoginPage extends Page {
         /* Action For Login Button */
         Login.setOnAction((event) -> {
       
-        	if (userName.getText() == null) {}
+            if (userName.getText() == null) {}
            
-        	else
-        	{
-	        	Rectangle2D chatScreenBounds = Screen.getPrimary().getVisualBounds();
-	          	stage.setX((chatScreenBounds.getWidth() - 800) / 2); 
-	            stage.setY((chatScreenBounds.getHeight() - 400) / 2);
-	            stage.setScene(this.pages.get("chat").setupMainScene(stage));
-        	}
+            else
+            {
+	        Rectangle2D chatScreenBounds = Screen.getPrimary().getVisualBounds();
+	        stage.setX((chatScreenBounds.getWidth() - 800) / 2); 
+	        stage.setY((chatScreenBounds.getHeight() - 400) / 2);
+	        stage.setScene(this.pages.get("chat").setupMainScene(stage));
+            }
     	});
         /* ========== */
         
         return loginPage;
-	}
+    }
 }
