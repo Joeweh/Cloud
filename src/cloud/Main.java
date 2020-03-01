@@ -8,18 +8,18 @@ public class Main extends Application
 {
 	@Override public void start(Stage stage) 
 	{
-        Page logInPage = new LoginPage();
-        Page chatPage = new ChatPage();
+            Page logInPage = new LoginPage();
+            Page chatPage = new ChatPage();
         
-        logInPage.addPage(chatPage, "chat");
+            logInPage.addPage(chatPage, "chat");
         
-        Scene logInScene = logInPage.setupMainScene(stage);	
+            Scene logInScene = logInPage.setupMainScene(stage);	
 		
 	    stage.setTitle("Cloud"); 
-        stage.setScene(logInScene); 
-        stage.sizeToScene();
-        stage.setResizable(false);
-        stage.show(); 
+            stage.setScene(logInScene); 
+            stage.sizeToScene();
+            stage.setResizable(false);
+            stage.show(); 
 	}
 	
     public static void main(String[] args) 
