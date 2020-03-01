@@ -11,14 +11,14 @@ import javafx.stage.Stage;
 import cloud.Page;
 
 public class ChatPage extends Page {
-	@Override
-	public Scene setupMainScene(Stage stage)
-	{
-		TextField messageInput = new TextField();
-		messageInput.setLayoutX(10);
-		messageInput.setLayoutY(350);
-		messageInput.setPrefWidth(650);
-		messageInput.setText(null);
+	
+    @Override public Scene setupMainScene(Stage stage)
+    {
+	TextField messageInput = new TextField();
+	messageInput.setLayoutX(10);
+	messageInput.setLayoutY(350);
+	messageInput.setPrefWidth(650);
+	messageInput.setText(null);
         messageInput.setPromptText("Enter Message Here");
         messageInput.setFocusTraversable(false);
         
@@ -39,7 +39,6 @@ public class ChatPage extends Page {
       
         Text hello = new Text("addfaefawef");
         Text sub = new Text("dflaksdjf;l");
-        //hello.setLayoutX(50);
         usersOnline[0] = hello;
         usersOnline[1] = sub;
         int xPos = 200;
@@ -47,8 +46,8 @@ public class ChatPage extends Page {
         
         for (Text current : usersOnline)
         {
-        	current.setLayoutY(yPos);
-        	yPos+=30;
+            current.setLayoutY(yPos);
+            yPos+=30;
         }
  
         ScrollPane userList = new ScrollPane();
@@ -58,8 +57,8 @@ public class ChatPage extends Page {
         userList.setPrefSize(200, 200);
         userList.setContent(new Group(usersOnline));
 
-		Scene chatPage = new Scene(new Group(messageInput, sendMessage, userListText, userList), 800, 400, Color.BLACK);
+	Scene chatPage = new Scene(new Group(messageInput, sendMessage, userListText, userList), 800, 400, Color.BLACK);
 		
-		return chatPage;
-	} 
+	return chatPage;
+    } 
 }
