@@ -6,15 +6,15 @@ import javafx.stage.Stage;
 
 public class Page {
 	
-	protected Map<String, Page> pages = new HashMap<>();
+    protected Map<String, Page> pages = new HashMap<>();
 	
-	public Scene setupMainScene(Stage stage) 
-	{
-		return null;
-	}
+    public Scene setupMainScene(Stage stage) 
+    {
+	return null;
+    }
 	
-	public void addPage(Page page, String name) 
-	{
-		this.pages.put(name, page);
-	}
+    public void addPage(Page page, String name) 
+    {
+	this.pages.put(name, page);
+    }
 }
