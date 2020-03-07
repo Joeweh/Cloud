@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+}
+apply plugin: 'java'
+
+String pack = 'com.github.obeseclown.cloud.client'
+group pack
+version '0.0.1-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+
+task copyJars(type: Copy) {
+    from buildDir.toString() + '\\libs\\'
+    include '*.jar'
+    into buildDir.parentFile.parentFile.toString() + '\\out\\jar\\'
+}
+
+jar {
+    manifest {
+        attributes(
+                'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+                'Main-Class': pack + '.ClientMain'
+        )
+    }
+}
+jar.finalizedBy(copyJars, clean)
